@@ -1,15 +1,37 @@
 # Site settings
-title:        "blog"
-description:  "blog"
-baseurl:      "" # the subpath of your site, e.g. /blog/
-url:          "http://yourdomain.com" # the base hostname & protocol for your site
-permalink: /blog/:year/:month/:day/:title.html
-github:       "vransam"
-disqus-id:    "example" #leave blank if you dont want comments.
+title: VR's Notebook
+description: "My thoughts and stuff"
+url: ""
+author:
+  name: "VR"
+  email: "hello@example.com"
+  url: "http://www.example.com"
 
 # Build settings
-markdown:     kramdown
-sass:
-    style: :compressed
-
+baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
+markdown: kramdown
+source: .
+destination: ./_site
+permalink: /blog/:year/:month/:day/:title.html
 future: true
+paginate: 5
+paginate_path: /page:num/
+
+gems: [jekyll-paginate]
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Custom variables
+version: "3.1.4"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false
